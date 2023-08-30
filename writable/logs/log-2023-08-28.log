@@ -1,0 +1,6 @@
+CRITICAL - 2023-08-28 11:36:40 --> Call to undefined method App\Controllers\CustomerService::findAll()
+in APPPATH\Controllers\CustomerService.php on line 15.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\CustomerService->index()
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CustomerService))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
