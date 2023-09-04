@@ -27,53 +27,55 @@
             <form method="post" action="<?=site_url('order/store')?>">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">الاسم</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder=" " name="first_name">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">اسم الأب</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder=" ">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">الكنية</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder=" ">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">رقم الهاتف</label>
-                                <input type="text" class="form-control" id="phone" name="phone" placeholder=" ">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>نظامي\مخالفات</label>
-                                <select class="form-control " style="width: 100%;" name="is_regular">
-                                    <option value="1" >نظامي</option>
-                                    <option value="2" >مخالفات</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>نوع الخدمة</label>
-                                <select class="form-control select2" style="width: 100%;">
-                                    <?php foreach ($cServices as $service){ ?>
-                                    <option value="<?=$service['id']?>" > <?=$service['name']?></option>
-                                    <?php } ?>
-                                </select>
-                            </div>
-                        </div>
 
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="customFile">تحميل صورة الهوية</label>
+                                <label>نظامي\مخالفات</label>
+                                <select class="form-control " style="width: 100%;" name="is_regular" id="is_regular" readonly>
+                                    <?php if($is_regular==1){ ?>
+                                    <option value="1" selected>نظامي</option>
+                                    <?php }else{ ?>
+                                    <option value="2" selected>مخالفات</option>
+                                     <?php }?>
+                                </select>
+                            </div>
+                        </div>
+                        <?php if($is_regular==1){ ?>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="customFile">تحميل سند ملكية</label>
+
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="customFile">
+                                    <label class="custom-file-label" for="customFile">Choose file</label>
+                                </div>
+                            </div>
+                        </div>
+                        <?php }else{?>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="customFile">تحميل وكالة كاتب بالعدل مصدقة</label>
+
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="customFile">
+                                        <label class="custom-file-label" for="customFile">Choose file</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="customFile">تحميل تحميل تعهد خطي بالملكية</label>
+
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="customFile">
+                                        <label class="custom-file-label" for="customFile">Choose file</label>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php } ?>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="customFile">تحميل فاتورة مباه لأقرب مشترك</label>
 
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="customFile">
@@ -84,10 +86,7 @@
 
                     </div>
 
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    </div>
+
                 </div>
                 <!-- /.card-body -->
 
@@ -106,4 +105,9 @@
 <script src="<?= base_url('admin/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js')?>"></script>
 <?= $this->endSection() ?>
 
+<?= $this->section('scripts') ?>
+<script>
+    $('#is_regular').prop('disabled',true);
+</script>
+<?= $this->endSection() ?>
 

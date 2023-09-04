@@ -33,8 +33,11 @@ $routes->get('/', 'Home::index');
 
 $routes->get('login', 'Login::index');
 
-$routes->get('add-order', 'Order::index');
+$routes->get('orders', 'Order::index');
+$routes->get('add-order', 'Order::add');
 $routes->post('order/store', 'Order::store');
+$routes->get('add-order-details', 'Order::orderDetails');
+
 
 
 /*

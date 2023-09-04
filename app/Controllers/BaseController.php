@@ -21,6 +21,10 @@ use Psr\Log\LoggerInterface;
  */
 abstract class BaseController extends Controller
 {
+    public function __construct()
+    {
+
+    }
     /**
      * Instance of the main Request object.
      *
