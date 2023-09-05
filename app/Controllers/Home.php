@@ -18,4 +18,8 @@ class Home extends BaseController
        // echo view('welcome_message',$data);
         echo view('homepage',$data);
     }
+    public function test()
+    {
+       
+    }
 }
