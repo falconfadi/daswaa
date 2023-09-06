@@ -36,34 +36,40 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">اسم الأب</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder=" ">
+                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder=" " name="father_name">
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">الكنية</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder=" ">
+                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder=" "  name="last_name">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">رقم الهاتف</label>
-                                <input type="text" class="form-control" id="phone" name="phone" placeholder=" ">
+                                <input type="text" class="form-control" id="phone" name="phone" placeholder=" " name="phone">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">الرقم الوطني</label>
+                                <input type="text" class="form-control" id="nationality_number" placeholder=" " name="nationality_number">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>نظامي\مخالفات</label>
                                 <select class="form-control " style="width: 100%;" name="is_regular">
-                                    <option value="1" >نظامي</option>
-                                    <option value="2" >مخالفات</option>
+                                    <option value="0" >نظامي</option>
+                                    <option value="1" >مخالفات</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>نوع الخدمة</label>
-                                <select class="form-control select2" style="width: 100%;">
+                                <select class="form-control select2" style="width: 100%;" name="service_id">
                                     <?php foreach ($cServices as $service){ ?>
                                     <option value="<?=$service['id']?>" > <?=$service['name']?></option>
                                     <?php } ?>
