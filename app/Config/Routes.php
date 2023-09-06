@@ -32,6 +32,7 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 
 $routes->get('login', 'Login::index');
+$routes->post('do-login', 'Login::login');
 
 $routes->get('orders', 'Order::index');
 $routes->get('add-order', 'Order::add');

@@ -6,19 +6,20 @@ use CodeIgniter\Model;
 
 class OrderModel extends Model
 {
-    public function saveOrder($data)
-    {
-        $query = $this->db->table($this->table)->insert($data);
-        return $query;
-    }
     protected $DBGroup          = 'default';
-    protected $table            = 'order';
+    protected $table            = 'orders';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = [
+        'client_id',
+        'service_id',
+        'is_regular',
+        'mobile',
+        'landline',
+    ];
 
     // Dates
     protected $useTimestamps = false;
@@ -43,5 +44,16 @@ class OrderModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
-   
+
+    public function client()
+    {
+        return $this->belongsTo('client', 'App\Models\ClientModel','client_id');
+        // $this->belongsTo('propertyName', 'model', 'foreign_key', 'owner_key');
+    }
+
+    public function service()
+    {
+        return $this->belongsTo('service','App\Models\CustomerServiceModel','service_id');
+
+    }
 }

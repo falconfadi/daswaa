@@ -5,40 +5,43 @@ namespace App\Models;
 use CodeIgniter\Model;
 
 class ClientModel extends Model
-{ protected $table = 'client';
-    /*
-    public function getProduct($id = false)
-    {
-        if($id === false){
-            return $this->findAll();
-        }else{
-            return $this->getWhere(['id' => $id]);
-        }   
-    }
+{
+    protected $DBGroup          = 'default';
+    protected $table            = 'clients';
+    protected $primaryKey       = 'id';
+    protected $useAutoIncrement = true;
+    protected $returnType       = 'array';
+    protected $useSoftDeletes   = false;
+    protected $protectFields    = true;
+    protected $allowedFields    = [
+        'first_name',
+        'last_name',
+        'father_name',
+        'is_regular',
+        'national_id',
+    ];
 
-  
+    // Dates
+    protected $useTimestamps = false;
+    protected $dateFormat    = 'datetime';
+    protected $createdField  = 'created_at';
+    protected $updatedField  = 'updated_at';
+    protected $deletedField  = 'deleted_at';
 
-    public function updateProduct($data, $id)
-    {
-        $query = $this->db->table($this->table)->update($data, array('id' => $id));
-        return $query;
-    }
+    // Validation
+    protected $validationRules      = [];
+    protected $validationMessages   = [];
+    protected $skipValidation       = false;
+    protected $cleanValidationRules = true;
 
-    public function deleteProduct($id)
-    {
-        $query = $this->db->table($this->table)->delete(array('id' => $id));
-        return $query;
-    } 
-    */
-    public function saveClient($data)
-    {
-        $query = $this->db->table($this->table)->insert($data);
-      ///  return $query;
-      return $this->insertID();
-    }
-    public function getClientByNationalityNumber($nationalityNumber)
-    {
-        return $this->where('nationality_number', $nationalityNumber)->first();
-    }
-
+    // Callbacks
+    protected $allowCallbacks = true;
+    protected $beforeInsert   = [];
+    protected $afterInsert    = [];
+    protected $beforeUpdate   = [];
+    protected $afterUpdate    = [];
+    protected $beforeFind     = [];
+    protected $afterFind      = [];
+    protected $beforeDelete   = [];
+    protected $afterDelete    = [];
 }

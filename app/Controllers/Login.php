@@ -10,4 +10,10 @@ class Login extends BaseController
     {
         echo view('login');
     }
+
+    public function login(){
+        //echo "fd";
+        //redirect('/');
+        return redirect()->to('/');
+    }
 }

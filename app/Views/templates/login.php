@@ -88,7 +88,8 @@
             <div class="container-fluid">
                 <div class="row">
                     <!-- left column -->
-                    <div class="col-md-12">
+
+                    <div class="col-md-8">
                         <!-- jquery validation -->
                         <div class="card card-primary">
                             <div class="card-header">
@@ -96,7 +97,7 @@
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form id="quickForm">
+                            <form id="quickForm" action="<?=site_url('do-login')?>" method="post">
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">البريد الالكتروني</label>
