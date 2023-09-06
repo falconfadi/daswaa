@@ -6,8 +6,13 @@ use CodeIgniter\Model;
 
 class OrderModel extends Model
 {
+    public function saveOrder($data)
+    {
+        $query = $this->db->table($this->table)->insert($data);
+        return $query;
+    }
     protected $DBGroup          = 'default';
-    protected $table            = 'orders';
+    protected $table            = 'order';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
@@ -38,4 +43,5 @@ class OrderModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+   
 }
