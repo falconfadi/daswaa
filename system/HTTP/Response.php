@@ -65,7 +65,7 @@ class Response extends Message implements ResponseInterface
         306 => 'Switch Proxy', // No longer used
         307 => 'Temporary Redirect', // 1.1
         308 => 'Permanent Redirect', // 1.1; Experimental; http://www.ietf.org/rfc/rfc7238.txt
-        // 4xx: Client error
+        // 4xx: ClientController error
         400 => 'Bad Request',
         401 => 'Unauthorized',
         402 => 'Payment Required',
@@ -96,7 +96,7 @@ class Response extends Message implements ResponseInterface
         429 => 'Too Many Requests', // 1.1; http://www.ietf.org/rfc/rfc6585.txt
         431 => 'Request Header Fields Too Large', // 1.1; http://www.ietf.org/rfc/rfc6585.txt
         451 => 'Unavailable For Legal Reasons', // http://tools.ietf.org/html/rfc7725
-        499 => 'Client Closed Request', // http://lxr.nginx.org/source/src/http/ngx_http_request.h#0133
+        499 => 'ClientController Closed Request', // http://lxr.nginx.org/source/src/http/ngx_http_request.h#0133
         // 5xx: Server error
         500 => 'Internal Server Error',
         501 => 'Not Implemented',

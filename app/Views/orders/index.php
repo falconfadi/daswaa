@@ -13,6 +13,15 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
+
+<?php     if(session()->getFlashdata('status')){?>
+    <div class="alert alert-success alert-dismissible" class="col-12">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <h4><i class="icon fa fa-ban"></i> تنبيه!</h4>
+        <?=session()->getFlashdata('status')?>
+    </div>
+<?php }   ?>
+
 <div class="col-12">
     <div class="card">
         <div class="card-header">
@@ -48,15 +57,11 @@
                     <td><?=$order['id']?></td>
                     <td>   <?=$names[$i]?>                 </td>
                     <td><?=$order['created_at']?></td>
-                    <td> <?=$order['is_regular']?></td>
+                    <td> <?=($order['is_regular']==0)?'نظامي':'مخالفات'?></td>
                     <td>
 
-
-
-                            <a class="dropdown-item" href="#"><span class="badge bg-warning">تعديل</span></a>
-                            <a class="dropdown-item" href="#"><span class="badge bg-primary">تأكيد</span></a>
-
-
+                        <a class="dropdown-item" href="#"><span class="badge bg-warning">تعديل</span></a>
+                        <a class="dropdown-item" href="#"><span class="badge bg-primary">تأكيد</span></a>
 
                     </td>
                 </tr>

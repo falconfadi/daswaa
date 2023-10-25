@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Models\ClientModel;
 use CodeIgniter\API\ResponseTrait;
 
-class Client extends BaseController
+class ClientController extends BaseController
 {
     use ResponseTrait;
 
@@ -26,7 +26,7 @@ class Client extends BaseController
         $phone = $request->getPost('phone');
 
         // Create a new client
-        $client = new Client();
+        $client = new ClientController();
         $client->first_name = $firstName;
         $client->father_name = $fatherName;
         $client->last_name = $lastName;
@@ -37,7 +37,7 @@ class Client extends BaseController
         // Return a response indicating success
         $response = [
             'status' => 'success',
-            'message' => 'Client created successfully',
+            'message' => 'ClientController created successfully',
             'client' => $client,
         ];
 

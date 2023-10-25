@@ -17,7 +17,7 @@ class App extends BaseConfig
      *
      *    http://example.com/
      */
-    public string $baseURL = 'http://localhost/daswaa';
+    public string $baseURL = 'http://localhost:82/daswaa';
 
     /**
      * Allowed Hostnames in the Site URL other than the hostname in the baseURL.
@@ -328,7 +328,7 @@ class App extends BaseConfig
      *
      * If your server is behind a reverse proxy, you must whitelist the proxy
      * IP addresses from which CodeIgniter should trust headers such as
-     * X-Forwarded-For or Client-IP in order to properly identify
+     * X-Forwarded-For or ClientController-IP in order to properly identify
      * the visitor's IP address.
      *
      * You need to set a proxy IP address or IP address with subnets and

@@ -24,7 +24,7 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form method="post" action="<?=site_url('order/store')?>">
+            <form method="post" action="<?=site_url('adding-order-details')?>">
                 <div class="card-body">
                     <div class="row">
 

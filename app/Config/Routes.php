@@ -29,16 +29,19 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+$routes->get('/', 'HomeController::index');
 
-$routes->get('login', 'Login::index');
-$routes->post('do-login', 'Login::login');
+//$routes->get('login', 'Login::index');
+//$routes->post('do-login', 'Login::login');
 
-$routes->get('orders', 'Order::index');
-$routes->get('add-order', 'Order::add');
-$routes->post('order/store', 'Order::store');
-$routes->get('add-order-details', 'Order::orderDetails');
+$routes->get('orders', 'OrderController::index');
+$routes->get('add-order', 'OrderController::add');
+$routes->post('order/store', 'OrderController::store');
+$routes->get('add-order-details', 'OrderController::orderDetails');
+$routes->post('adding-order-details', 'OrderController::addingOrderDetails');
 
+
+$routes->get('test', 'OrderController::test');
 
 
 /*

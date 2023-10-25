@@ -9,14 +9,7 @@
 <?= $this->section('content') ?>
 
     <div class="col-md-12">
-        <?php     if(session()->getFlashdata('status')){?>
 
-            <div class="alert alert-success alert-dismissible">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                <h4><i class="icon fa fa-ban"></i> Alert!</h4>
-                <?=session()->getFlashdata('status')?>
-            </div>
-        <?php }   ?>
         <!-- general form elements -->
         <div class="card card-primary">
             <div class="card-header">
@@ -53,8 +46,8 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="exampleInputEmail1">الرقم الوطني</label>
-                                <input type="text" class="form-control" id="nationality_number" placeholder=" " name="nationality_number">
+                                <label for="national_id">الرقم الوطني</label>
+                                <input type="text" class="form-control" id="national_id" placeholder=" " name="national_id">
                             </div>
                         </div>
                         <div class="col-md-6">

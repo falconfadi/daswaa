@@ -44,4 +44,9 @@ class ClientModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getClientByNationalityNumber($nationalityNumber)
+    {
+        return $this->where('national_id', $nationalityNumber)->first();
+    }
 }

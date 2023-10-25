@@ -11,6 +11,7 @@
         "ext-mbstring": "*",
         "codeigniter4/translations": "^4.3",
         "laminas/laminas-escaper": "^2.9",
+        "myth/auth": "^1.2",
         "psr/log": "^1.1"
     },
     "require-dev": {

@@ -140,7 +140,7 @@ class CreditCardRules
             'prefixes'   => '56',
             'checkdigit' => false,
         ],
-        'Royal Bank of Canada Client Card' => [
+        'Royal Bank of Canada ClientController Card' => [
             'name'       => 'rbc',
             'length'     => '16',
             'prefixes'   => '45',
