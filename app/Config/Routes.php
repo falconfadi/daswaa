@@ -39,6 +39,10 @@ $routes->get('add-order', 'OrderController::add');
 $routes->post('order/store', 'OrderController::store');
 $routes->get('add-order-details', 'OrderController::orderDetails');
 $routes->post('adding-order-details', 'OrderController::addingOrderDetails');
+$routes->get('clients', 'ClientController::index');
+$routes->get('services', 'CustomerServiceController::index');
+$routes->get('add-service', 'CustomerServiceController::add');
+$routes->get('add-client', 'ClientController::add');
 
 
 $routes->get('test', 'OrderController::test');

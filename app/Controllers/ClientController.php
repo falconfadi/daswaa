@@ -14,6 +14,22 @@ class ClientController extends BaseController
      *
      * @return \CodeIgniter\HTTP\Response
      */
+    public function index()
+    {
+        $title = "المشتركين";
+        $data['title'] = $title;
+        $clients = new ClientModel();
+
+        $data['clients' ] =$clients->findAll();
+        echo view('clients/index',$data);
+    }
+    public function add()
+    {
+        $title = "إضافة  مشترك";
+        $data['title'] = $title;
+       
+        echo view('clients/add_client',$data);
+    }
     public function create()
     {/*
         $request = service('request');
